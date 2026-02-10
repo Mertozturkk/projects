@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Görüntüleyici</title>
+    <style>
+        body { margin: 0; padding: 0; font-family: sans-serif; display: flex; flex-direction: column; height: 100vh; }
+        header { background: #333; color: white; padding: 15px; text-align: center; }
+        #pdf-container { flex-grow: 1; width: 100%; height: 100%; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2>Dosya Başlığı / Açıklaması</h2>
+        <a href="dokuman.pdf" download style="color: yellow; text-decoration: none; border: 1px solid yellow; padding: 5px 10px; border-radius: 5px;">Dosyayı İndir</a>
+    </header>
+
+    <iframe id="pdf-container" src="dokuman.pdf" frameborder="0"></iframe>
+
+</body>
+</html>
