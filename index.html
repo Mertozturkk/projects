@@ -3,21 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF Görüntüleyici</title>
+    <title>Dokümanlar</title>
     <style>
-        body { margin: 0; padding: 0; font-family: sans-serif; display: flex; flex-direction: column; height: 100vh; }
-        header { background: #333; color: white; padding: 15px; text-align: center; }
-        #pdf-container { flex-grow: 1; width: 100%; height: 100%; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f0f2f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+        h1 {
+            font-size: 1.6rem;
+            color: #333;
+            margin-bottom: 32px;
+            letter-spacing: 0.5px;
+        }
+        .cards {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+            padding: 32px 28px;
+            width: 260px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        .card-icon {
+            font-size: 3rem;
+        }
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #222;
+            text-align: center;
+        }
+        .card-desc {
+            font-size: 0.85rem;
+            color: #666;
+            text-align: center;
+            line-height: 1.5;
+        }
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .btn {
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        .btn-view {
+            background: #4f46e5;
+            color: white;
+        }
+        .btn-view:hover { background: #4338ca; }
+        .btn-dl {
+            background: #f3f4f6;
+            color: #333;
+            border: 1px solid #d1d5db;
+        }
+        .btn-dl:hover { background: #e5e7eb; }
     </style>
 </head>
 <body>
-
-    <header>
-        <h2>Dosya Başlığı / Açıklaması</h2>
-        <a href="dokuman.pdf" download style="color: yellow; text-decoration: none; border: 1px solid yellow; padding: 5px 10px; border-radius: 5px;">Dosyayı İndir</a>
-    </header>
-
-    <iframe id="pdf-container" src="dokuman.pdf" frameborder="0"></iframe>
-
+    <h1>Dokümanlar</h1>
+    <div class="cards">
+        <div class="card">
+            <div class="card-icon">📄</div>
+            <div class="card-title">Doküman</div>
+            <div class="card-desc">Genel doküman</div>
+            <div class="btn-group">
+                <a class="btn btn-view" href="viewer.html?file=dokuman.pdf" target="_blank">Görüntüle</a>
+                <a class="btn btn-dl" href="dokuman.pdf" download>İndir</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-icon">💓</div>
+            <div class="card-title">PulseGuard</div>
+            <div class="card-desc">Staj projesi dokümanı</div>
+            <div class="btn-group">
+                <a class="btn btn-view" href="viewer.html?file=pulseGuard.pdf" target="_blank">Görüntüle</a>
+                <a class="btn btn-dl" href="pulseGuard.pdf" download>İndir</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
